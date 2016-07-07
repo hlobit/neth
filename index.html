@@ -1,0 +1,302 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>Noémi&nbsp;et&nbsp;Hubert</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+</head>
+
+<body>
+
+	<section id="header">
+		<header class="major">
+			<h1>Noémi &amp; Hubert</h1>
+			<p>S'élancent joyeusement vers le mariage</p>
+		</header>
+		<div class="container">
+			<ul class="actions">
+				<li><a href="#one" class="button special scrolly">Commencer&nbsp;⇢</a></li>
+			</ul>
+		</div>
+	</section>
+
+	<section id="one" class="main special">
+		<div class="container">
+			<span class="image fit primary"><img src="images/pic01.jpg" alt="" /></span>
+			<div class="content">
+				<header class="major">
+					<h2>Bienvenue !</h2>
+				</header>
+				<p>
+					Amis de Belgique, de France ou d'ailleurs, voici une heureuse nouvelle&nbsp;: notre mariage sera célébré dans <span id="clock"><span class="days"></span> jours,
+					<span class="hours"></span> heures, <span class="minutes"></span> minutes et <span class="seconds"></span> modestes secondes</span>.
+					<br>Autrement dit le <a href="javascript:void(0)" title="Be on time, toi aussi Glody !">8&nbsp;octobre&nbsp;2016&nbsp;à&nbsp;14h</a>&nbsp;!
+				</p>
+				<p>
+					Vous trouverez sur <a href="javascript:void(0)" title="Ce site concocté avec amour…">ce site</a> toutes les informations utiles au bon déroulement de la journée&nbsp;: comment nous rejoindre, comment vous loger, que chanter le jour&nbsp;J…
+				</p>
+				<p>
+					Pour répondre à notre invitation* ou pour toute autre demande <em>plus ou moins métaphysique</em>, vous pouvez aussi utiliser <a href="#contact-form-anchor" title="Évitez de spamer notre boite mail. Elle est robuste mais tout de même…" class="scrolly">le formulaire</a>					prévu à cet effet.
+				</p>
+				<p>
+					En espérant vous revoir bientôt, nous vous souhaitons une joyeuse navigation sur notre <a href="javascript:void(0)" title="N'oubliez pas, ce n'est ni noemi-et-hubert.be ni noemi-et-hubert.fr…">site internet</a>&nbsp;! 🎈&nbsp;🏁
+				</p>
+				<p class="legend">
+					* Notez que pour des questions d’organisation, nous aurions besoin de vos réponses (également pour la réception) avant le 25 août prochain.
+				</p>
+			</div>
+			<script>
+				var clock = document.getElementById('clock');
+				var daysSpan = clock.querySelector('.days');
+				var hoursSpan = clock.querySelector('.hours');
+				var minutesSpan = clock.querySelector('.minutes');
+				var secondsSpan = clock.querySelector('.seconds');
+				var deadline = 'October 08 2016 14:00:00 GMT+0200';
+
+				function getTimeRemaining(endtime) {
+					var t = Date.parse(endtime) - Date.parse(new Date());
+					var seconds = Math.max(0, Math.floor((t / 1000) % 60));
+					var minutes = Math.max(0, Math.floor((t / 1000 / 60) % 60));
+					var hours = Math.max(0, Math.floor(t / (1000 * 60 * 60) % 24));
+					var days = Math.max(0, Math.floor(t / (1000 * 60 * 60 * 24)));
+
+					return {
+						'total': t,
+						'days': days,
+						'hours': hours,
+						'minutes': minutes,
+						'seconds': seconds,
+					};
+				}
+
+				function updateClock() {
+					var t = getTimeRemaining(deadline);
+					daysSpan.innerHTML = t.days;
+					hoursSpan.innerHTML = t.hours;
+					minutesSpan.innerHTML = t.minutes;
+					secondsSpan.innerHTML = t.seconds;
+
+					if (t.total <= 0) {
+						clearInterval(timeinterval);
+					}
+				}
+
+				updateClock(); // run function once at first to avoid delay
+				var timeinterval = setInterval(updateClock, 1000);
+			</script>
+			<a href="#two" class="goto-next scrolly">Suivant</a>
+		</div>
+	</section>
+
+	<section id="two" class="main special">
+		<div class="container">
+			<span class="image fit primary"><img src="images/pic02.jpg" alt="" /></span>
+			<div class="content">
+				<header class="major">
+					<h2><a href="javascript:void(0)" title="Et pour ne pas vous perdre…">Pour nous rejoindre</a></h2>
+				</header>
+				<p>Voici les deux lieux <em>sympathiques</em>
+					<br>choisis pour notre journée&nbsp;:</p>
+				<div class="grid-items">
+					<a href="https://goo.gl/maps/xaZxkiU8gVR2" target="_blank" class="grid-item grid-item-image-church">
+						<h1>L'église de Sirault ⇢</h1>
+					</a>
+					<a href="https://goo.gl/maps/WyUst29ugAo" target="_blank" class="grid-item grid-item-big grid-item-image-farm">
+						<h1>La ferme de Bouchegnies ⇢</h1>
+					</a>
+				</div>
+				<br>
+				<p class="legend">
+					Cliquez sur les images pour vous diriger vers la localisation.
+				</p>
+				<p>
+					🚙 🚗 🚕
+					<br>Pour ceux qui souhaiteraient nous rejoindre en <strong>covoiturage</strong>, n’hésitez pas à <a href="#footer" title="" class="scrolly">nous contacter</a>, nous ferons notre possible pour vous rediriger vers d’autres personnes qui viennent de la
+					même région que vous.
+				</p>
+				<p>
+					Pour mieux vous situer, l'église et la salle se trouvent à un peu plus d’une heure de voiture de Bruxelles en direction de la France.
+				</p>
+			</div>
+			<a href="#three" class="goto-next scrolly">Next</a>
+		</div>
+	</section>
+
+	<section id="three" class="main special">
+		<div class="container">
+			<span class="image fit primary"><img src="images/pic03.jpg" alt="" /></span>
+			<div class="content">
+				<header class="major">
+					<h2>Pour vous loger</h2>
+				</header>
+				<p>
+					Si vous venez de loin, nous avons répertorié pour vous sur une carte quelques hôtels, chambres d’hôtes et gîtes afin de vous faciliter la recherche d’un logement.
+				</p>
+				<p>
+					Cliquez sur l’onglet en haut à gauche et la liste des différents lieux apparaîtra avec la distance approximative en voiture. En cliquant ensuite sur chacune des options, vous trouverez le prix et le lien sur lequel vous pouvez trouver davantage d’informations
+					et réserver.
+				</p>
+				<p>
+					🔍
+					<br>Bonne recherche… et n’hésitez pas à <a href="#footer" title="" class="scrolly">nous joindre</a> en cas de problème.
+				</p>
+				<iframe src="https://www.google.com/maps/d/embed?mid=1rVDh15D3ZbD0uwfDPdCTDYdowH0" width="100%" height="480"></iframe>
+			</div>
+			<a href="#four" class="goto-next scrolly">Next</a>
+		</div>
+	</section>
+
+	<section id="four" class="main special">
+		<div class="container">
+			<span class="image fit primary"><img src="images/pic04.jpg" alt="" /></span>
+			<div class="content">
+				<header class="major">
+					<h2><a href="javascript:void(0)" title="Faux ou juste mais avec le sourire&nbsp;!">Pour chanter avec nous</a></h2>
+				</header>
+				<section>
+					<p>
+						La musique compte beaucoup pour nous, et nous serions touchés que vous puissiez chanter librement, le coeur en fête, avec nous en ce beau jour. Si cela vous «&nbsp;chante&nbsp;», n’hésitez donc pas à écouter les chants de la messe avant le mariage.
+					</p>
+					<p>
+						🎼
+						<br><a href="http://chants.noemi-et-hubert.eu" target="_blank">Rendez-vous sur la page réservée aux chants&nbsp;⇢</a>
+					</p>
+					<p>
+						En effet, la plupart seront sûrement nouveaux pour vous, mais… nous sommes sûrs que vous les apprécierez&nbsp;!
+					</p>
+				</section>
+			</div>
+			<a href="#five" class="goto-next scrolly">Suivant</a>
+		</div>
+	</section>
+
+	<section id="five" class="main special">
+		<div class="container">
+			<span class="image fit primary"><img src="images/pic05.jpg" alt="" /></span>
+			<div class="content">
+				<header class="major">
+					<h2><a href="javascript:void(0)" title="Aaaaaaah, les cadeaux. Soyez généreux…&#013;C'est vrai quoi, pour qu'on puisse vous accueillir correctement, faites un effort. &#x1f609;">Pour nous faire plaisir</a></h2>
+				</header>
+				<p>
+					Si vous souhaitez nous aider à aménager notre futur «&nbsp;chez nous&nbsp;» ou à réaliser nos projets, nous avons préparé <a href="https://www.kadolog.com/fr/liste/liste-de-noemi-et-hubert" target="_blank">une liste de ce qui pourrait nous faire plaisir</a>,
+					mais aussi… vous faire plaisir, quand vous viendrez nous rendre visite.
+					<br>N'est-ce pas&nbsp;?
+				</p>
+				<p>
+					Vous pouvez également nous faire un virement…
+					<br><strong>IBAN</strong>&nbsp;: BE20 6118 6797 4056
+					<br><strong>BIC</strong>&nbsp;: DEUTBEBE
+				</p>
+				<p>
+					Si vous souhaitez nous faire un chèque, merci de l’adresser à Hubert car nous n’avons pas de compte commun français et les chèques n’existent plus en Belgique.
+				</p>
+				<p>
+					🎁
+					<br><em>Mais le plus grand cadeau sera pour nous votre présence à nos côtés.</em>
+				</p>
+			</div>
+			<a href="#footer" class="goto-next scrolly">Suivant</a>
+		</div>
+	</section>
+
+	<section id="footer">
+		<div class="container">
+			<header class="major">
+				<h2>Pour nous contacter</h2>
+			</header>
+			<section>
+				<p>
+					Vous avez l'embarras du choix&nbsp;:
+				</p>
+				<h5>Par courrier</h5>
+				<ul>
+					<li>Noémi&nbsp;: Rue Valduc 298, 1160 Auderghem Belgique (jusqu’au 10 septembre)</li>
+					<li>Hubert&nbsp;: Boulevard Brand Whitlock 5/11, 1150 Woluwé-Saint-Pierre Belgique (jusqu’au 30 septembre)</li>
+					<li>Et nous ne manquerons pas de vous communiquer notre future adresse lorsqu’elle sera connue… 🏡</li>
+				</ul>
+				<h5>Par téléphone</h5>
+				<ul>
+					<li>Noémi&nbsp;: <strong>+32 498 40 64 32</strong></li>
+					<li>Hubert&nbsp;: <strong>+32 489 98 88 59</strong> ou <strong>+33 6 37 39 70 57</strong></li>
+				</ul>
+				<h5>Par email</h5>
+				<p>
+					<a href="mailto:8.octobre.2016@noemi-et-hubert.eu">8.octobre.2016@noemi-et-hubert.eu</a>
+				</p>
+				<h5 id="contact-form-anchor">Par le formulaire</h5>
+			</section>
+			<div class="align-center">
+				<form name="message-data">
+					<div class="row uniform">
+						<div class="6u 12u$(xsmall)">
+							<input type="text" name="senderName" id="senderName" placeholder="Nom" />
+						</div>
+						<div class="6u$ 12u$(xsmall)">
+							<input type="email" name="senderAddress" id="senderAddress" placeholder="Email" />
+						</div>
+						<div class="12u$">
+							<textarea name="message" id="message" placeholder="Message" rows="4"></textarea>
+						</div>
+						<div class="12u$">
+							<ul class="actions">
+								<li>
+									<input name="submit" type="submit" value="Envoyer le message" class="special" />
+								</li>
+							</ul>
+						</div>
+					</div>
+				</form>
+				<p class="legend">
+					Nous vous remercions de bien vouloir nous adresser vos réponses (également pour la réception) avant le 25 août prochain.
+				</p>
+			</div>
+			<script>
+				document.forms.namedItem("message-data").addEventListener("submit", function(event) {
+					event.preventDefault();
+
+					var form = event.target;
+					var request = new XMLHttpRequest();
+
+					request.onreadystatechange = function(response) {
+						if (request.readyState === XMLHttpRequest.DONE && request.status === 200) {
+							var submitButton = form.elements.namedItem("submit");
+							submitButton.disabled = true;
+							submitButton.value = 'Message envoyé !';
+							form.reset();
+						};
+					};
+
+					request.open("POST", "http://nethapi.apps.noemi-et-hubert.eu/message");
+					request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+					request.send(JSON.stringify({
+						senderName: form.elements["senderName"].value,
+						senderAddress: form.elements["senderAddress"].value,
+						message: form.elements["message"].value,
+					}));
+				});
+			</script>
+		</div>
+		<footer>
+			<ul class="copyright">
+				<li>&copy; Noémi &amp; Hubert</li>
+			</ul>
+		</footer>
+	</section>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/skel.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
