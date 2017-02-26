@@ -1047,6 +1047,16 @@ p {
 p.legend {
     font-size: 80%;
 		font-style: italic;
+    line-height: 1.5em;
+}
+p.visible {
+  color: #ffffff;
+  margin-top: 8px;
+  padding: 8px;
+  background-color: #d16d53;
+}
+p.visible strong {
+  color: #ffffff;
 }
 h1, h2, h3, h4, h5, h6 {
     color: #61686b;
@@ -2442,4 +2452,17 @@ input[type="submit"].disabled, input[type="submit"]:disabled, input[type="reset"
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
+}
+.video-wrapper {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+.video-wrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 }

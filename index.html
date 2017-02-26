@@ -14,7 +14,6 @@
 	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 	  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	
 	  ga('create', 'UA-80435841-1', 'auto');
 	  ga('send', 'pageview');
 	</script>
@@ -25,14 +24,135 @@
 	<section id="header">
 		<header class="major">
 			<h1>Noémi &amp; Hubert</h1>
-			<p>S'élancent joyeusement vers le mariage</p>
+			<p>partis pour une grande aventure…</p>
 		</header>
 		<div class="container">
 			<ul class="actions">
-				<li><a href="#one" class="button special scrolly">Commencer&nbsp;⇢</a></li>
+				<li><a href="#welcome" class="button special scrolly">Commencer&nbsp;⇢</a></li>
 			</ul>
 		</div>
 	</section>
+
+	<section id="welcome" class="main special">
+		<div class="container">
+			<span class="image fit primary"><img src="images/pic01.jpg" alt="" /></span>
+			<div class="content">
+				<header class="major">
+					<h2>Merci !</h2>
+				</header>
+				<p>
+					Bien chers tous, nous sommes désormais mariés depuis <span id="clock-after"><span class="days"></span>&nbsp;jours,
+					<span class="hours"></span>&nbsp;heures, <span class="minutes"></span>&nbsp;minutes et <span class="seconds"></span>&nbsp;modestes secondes</span>, pour notre plus grand bonheur&nbsp;!
+					<br>Autrement dit le <a href="javascript:void(0)" title="Merci Glody d'avoir été à l'heure !">8&nbsp;octobre&nbsp;2016&nbsp;à&nbsp;15h30</a>&nbsp;<em>environ</em> 😎.
+				</p>
+				<p>
+					Nous vous remercions énormément* pour votre venue, vos attentions, vos participations, et pour tout ce qui a rendu cette journée unique et agréable pour tous.
+				</p>
+				<p>
+					Vous trouverez sur <a href="javascript:void(0)" title="Ce site concocté avec amour…">ce site</a> les souvenirs du mariage, en photos, vidéos <em>et compagnie</em>, souvenirs que nous prenons plaisir à nous remémorer bien souvent et donc, à vous partager&nbsp;!
+				</p>
+				<p>
+					En espérant vous revoir bientôt, nous vous souhaitons une joyeuse navigation sur notre petit <a href="javascript:void(0)" title="N'oubliez pas, ce n'est ni noemi-et-hubert.be ni noemi-et-hubert.fr…">site internet</a>&nbsp;! 🎈&nbsp;🏁
+				</p>
+				<p class="legend">
+					* Quand on dit énormément, c'est VRAIMENT énormément.
+				</p>
+			</div>
+			<script>
+				(function() {
+					var clock = document.getElementById('clock-after');
+					var daysSpan = clock.querySelector('.days');
+					var hoursSpan = clock.querySelector('.hours');
+					var minutesSpan = clock.querySelector('.minutes');
+					var secondsSpan = clock.querySelector('.seconds');
+					var deadline = 'October 08 2016 15:30:00 GMT+0200';
+
+					function getTimeRemaining(endtime) {
+						var t = Date.parse(new Date()) - Date.parse(endtime);
+						var seconds = Math.max(0, Math.floor((t / 1000) % 60));
+						var minutes = Math.max(0, Math.floor((t / 1000 / 60) % 60));
+						var hours = Math.max(0, Math.floor(t / (1000 * 60 * 60) % 24));
+						var days = Math.max(0, Math.floor(t / (1000 * 60 * 60 * 24)));
+
+						return {
+							'total': t,
+							'days': days,
+							'hours': hours,
+							'minutes': minutes,
+							'seconds': seconds,
+						};
+					}
+
+					function updateClock() {
+						var t = getTimeRemaining(deadline);
+						daysSpan.innerHTML = t.days;
+						hoursSpan.innerHTML = t.hours;
+						minutesSpan.innerHTML = t.minutes;
+						secondsSpan.innerHTML = t.seconds;
+
+						if (t.total <= 0) {
+							clearInterval(timeinterval);
+						}
+					}
+
+					updateClock(); // run function once at first to avoid delay
+					var timeinterval = setInterval(updateClock, 1000);
+				})();
+			</script>
+			<a href="#souvenirs" class="goto-next scrolly">Suivant</a>
+		</div>
+	</section>
+
+	<section id="souvenirs" class="main">
+		<div class="container">
+			<span class="image fit primary"><img src="images/pic02.jpg" alt="" /></span>
+			<div class="content">
+				<header class="major">
+					<h2>Mémoires du 8 octobre</h2>
+				</header>
+				<section>
+					<p>
+						<a href="javascript:void(0)" title="On veut pas vous harceler mais…&nbsp;">N'oubliez pas</a> que pour continuer à rassembler les beaux fruits de cette journée, nous avons aussi <strong>besoin de vous</strong>&nbsp;!
+						N'hésitez pas à ajouter vos photos à l'album et nous envoyer si vous avez des vidéos de la journée.
+					</p>
+					<h5>Les photos&nbsp;!</h5>
+					<div class="video-wrapper">
+						<script src='https://www.yogile.com/embed/53a57640-fb58-11e6-8d20-5541246581fc.js?v=1.0&amp;sort=caD&amp;width=100%25&amp;height=100%25&amp;caption=false&amp;auto=true&amp;upload=true' type='text/javascript' charset='utf-8'></script>
+					</div>
+					<!-- <script>
+						var done = false;
+						var interval = setInterval(function() {
+							console.log(window.frames);
+              window.frames['myIFrame'].document.getElementById('myIFrameElemId');
+						}, 5000);
+					</script> -->
+					<p class="legend visible">
+						Vous avez des photos de la journée ? <strong>Envoyez-les nous</strong> en cliquant sur le bouton en haut à gauche du diaporama.
+					</p>
+					<h5>Les vidéos&nbsp;!</h5>
+					<div class="video-wrapper">
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/qRERBDaO_Xw" frameborder="0" allowfullscreen></iframe>
+					</div>
+					<hr style="margin-bottom:4px;margin-top:4px;">
+					<div class="video-wrapper">
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/72CWCDnEAaQ" frameborder="0" allowfullscreen></iframe>
+					</div>
+					<p class="legend visible">
+						Pour <strong>nous envoyer vos vidéos de la journée</strong>, n'hésitez pas&nbsp;: <a href="https://wetransfer.com">WeTransfer</a>&nbsp;!
+					</p>
+				</section>
+			</div>
+			<a href="#one" class="goto-next scrolly">Suivant</a>
+		</div>
+	</section>
+
+	<hr style="margin-bottom:0;">
+	<div style="background-color:#d16d53;">
+		<div class="container">
+			<p style="margin-bottom:0;color:#ffffff;">Plus bas que cette ligne, c'était <em>avant</em>…</p>
+		</div>
+	</div>
+	<hr style="margin-top:0;">
 
 	<section id="one" class="main special">
 		<div class="container">
@@ -42,7 +162,7 @@
 					<h2>Bienvenue !</h2>
 				</header>
 				<p>
-					Amis de Belgique, de France ou d'ailleurs, voici une heureuse nouvelle&nbsp;: notre mariage sera célébré dans <span id="clock"><span class="days"></span> jours,
+					Amis de Belgique, de France ou d'ailleurs, voici une heureuse nouvelle&nbsp;: notre mariage sera célébré dans <span id="clock-before"><span class="days"></span> jours,
 					<span class="hours"></span> heures, <span class="minutes"></span> minutes et <span class="seconds"></span> modestes secondes</span>.
 					<br>Autrement dit le <a href="javascript:void(0)" title="Be on time, toi aussi Glody !">8&nbsp;octobre&nbsp;2016&nbsp;à&nbsp;14h</a>&nbsp;!
 				</p>
@@ -60,43 +180,45 @@
 				</p>
 			</div>
 			<script>
-				var clock = document.getElementById('clock');
-				var daysSpan = clock.querySelector('.days');
-				var hoursSpan = clock.querySelector('.hours');
-				var minutesSpan = clock.querySelector('.minutes');
-				var secondsSpan = clock.querySelector('.seconds');
-				var deadline = 'October 08 2016 14:00:00 GMT+0200';
+				(function() {
+					var clock = document.getElementById('clock-before');
+					var daysSpan = clock.querySelector('.days');
+					var hoursSpan = clock.querySelector('.hours');
+					var minutesSpan = clock.querySelector('.minutes');
+					var secondsSpan = clock.querySelector('.seconds');
+					var deadline = 'October 08 2016 14:00:00 GMT+0200';
 
-				function getTimeRemaining(endtime) {
-					var t = Date.parse(endtime) - Date.parse(new Date());
-					var seconds = Math.max(0, Math.floor((t / 1000) % 60));
-					var minutes = Math.max(0, Math.floor((t / 1000 / 60) % 60));
-					var hours = Math.max(0, Math.floor(t / (1000 * 60 * 60) % 24));
-					var days = Math.max(0, Math.floor(t / (1000 * 60 * 60 * 24)));
+					function getTimeRemaining(endtime) {
+						var t = Date.parse(endtime) - Date.parse(new Date());
+						var seconds = Math.max(0, Math.floor((t / 1000) % 60));
+						var minutes = Math.max(0, Math.floor((t / 1000 / 60) % 60));
+						var hours = Math.max(0, Math.floor(t / (1000 * 60 * 60) % 24));
+						var days = Math.max(0, Math.floor(t / (1000 * 60 * 60 * 24)));
 
-					return {
-						'total': t,
-						'days': days,
-						'hours': hours,
-						'minutes': minutes,
-						'seconds': seconds,
-					};
-				}
-
-				function updateClock() {
-					var t = getTimeRemaining(deadline);
-					daysSpan.innerHTML = t.days;
-					hoursSpan.innerHTML = t.hours;
-					minutesSpan.innerHTML = t.minutes;
-					secondsSpan.innerHTML = t.seconds;
-
-					if (t.total <= 0) {
-						clearInterval(timeinterval);
+						return {
+							'total': t,
+							'days': days,
+							'hours': hours,
+							'minutes': minutes,
+							'seconds': seconds,
+						};
 					}
-				}
 
-				updateClock(); // run function once at first to avoid delay
-				var timeinterval = setInterval(updateClock, 1000);
+					function updateClock() {
+						var t = getTimeRemaining(deadline);
+						daysSpan.innerHTML = t.days;
+						hoursSpan.innerHTML = t.hours;
+						minutesSpan.innerHTML = t.minutes;
+						secondsSpan.innerHTML = t.seconds;
+
+						if (t.total <= 0) {
+							clearInterval(timeinterval);
+						}
+					}
+
+					updateClock(); // run function once at first to avoid delay
+					var timeinterval = setInterval(updateClock, 1000);
+	      })();
 			</script>
 			<a href="#two" class="goto-next scrolly">Suivant</a>
 		</div>
@@ -258,9 +380,6 @@
 						</div>
 					</div>
 				</form>
-				<p class="legend">
-					Nous vous remercions de bien vouloir nous adresser vos réponses (également pour la réception) avant le 25 août prochain.
-				</p>
 			</div>
 			<script>
 				document.forms.namedItem("message-data").addEventListener("submit", function(event) {
